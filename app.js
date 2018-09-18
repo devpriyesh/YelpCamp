@@ -10,7 +10,7 @@ var express               = require("express"),
 app.set("view engine" , "ejs");
 app.use(bodyParser.urlencoded({extended:true}));
 // mongoose.connect("mongodb://localhost/yelp-camp001");
-mongoose.connect("mongodb://priyesh:password123@ds161322.mlab.com:61322/yelpcamp_priyesh");
+mongoose.connect(process.env.DATABASEURL);
 app.use(methodOverride("_method"));
 
 var campground = require("./models/campground.js"),
